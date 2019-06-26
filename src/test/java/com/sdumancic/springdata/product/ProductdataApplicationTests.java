@@ -43,7 +43,7 @@ public class ProductdataApplicationTests {
     public void testCreate(){
         Product p = new Product();
         p.setId(1);
-        p.setName("Test Product");
+        p.setName("Test MongoProduct");
         p.setDesc("This is product description");
         p.setPrice(123.23d);
         productRepository.save(p);
@@ -56,7 +56,7 @@ public class ProductdataApplicationTests {
         if (byId.isPresent())
             p= byId.get();
         assertNotNull(p);
-        assertEquals("Test Product",p.getName());
+        assertEquals("Test MongoProduct",p.getName());
     }
 
     @Test
@@ -68,7 +68,7 @@ public class ProductdataApplicationTests {
         p.setPrice(1200d);
         productRepository.save(p);
         assertNotNull(p);
-        assertEquals("Test Product",p.getName());
+        assertEquals("Test MongoProduct",p.getName());
     }
 
     @Test
@@ -135,7 +135,7 @@ public class ProductdataApplicationTests {
         Session session = entityManager.unwrap(Session.class);
 
         Product product = productRepository.findById(-1).get();
-        int size= CacheManager.ALL_CACHE_MANAGERS.get(0).getCache("com.sdumancic.springdata.product.entities.Product").getSize();
+        int size= CacheManager.ALL_CACHE_MANAGERS.get(0).getCache("com.sdumancic.springdata.product.entities.MongoProduct").getSize();
         assertThat(size, greaterThan(0));
         System.out.println("Cache size=" + size);
         productRepository.findById(-1).get();

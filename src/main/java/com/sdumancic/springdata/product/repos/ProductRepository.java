@@ -1,12 +1,14 @@
 package com.sdumancic.springdata.product.repos;
 
 import com.sdumancic.springdata.product.entities.Product;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
+
 
 public interface ProductRepository extends PagingAndSortingRepository<Product,Integer> {
 

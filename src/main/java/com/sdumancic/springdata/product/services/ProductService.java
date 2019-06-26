@@ -3,6 +3,7 @@ package com.sdumancic.springdata.product.services;
 import com.sdumancic.springdata.product.entities.Product;
 import com.sdumancic.springdata.product.repos.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
